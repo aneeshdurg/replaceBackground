@@ -1,0 +1,46 @@
+<html>
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<script src="detector.js"></script>
+	<script>
+	var video, canvas, context, width, height;
+	var xs = 0;
+	var xe = 0;
+	var ys = 0;
+	var ye = 0;
+	var detect = null;
+	navigator.getUserMedia = ( navigator.getUserMedia ||
+                       navigator.webkitGetUserMedia ||
+                       navigator.mozGetUserMedia ||
+                       navigator.msGetUserMedia);
+
+	addEventListener("DOMContentLoaded", initialize);
+	</script>
+<body class="zoom">
+		<video id="vid" hidden></video>
+		<canvas id="c"></canvas>
+		<div id="content">
+		<br>
+		<button onclick="threshDelta(true)">+</button>
+		<button onclick="threshDelta(false)">-</button>
+		<select id="imgname">
+			<option value="space" onclick="changeImage()">Space</option>
+			<option value="nyan"  onclick="changeImage()">Nyan Cat</option>
+			<option value="psychChaos" onclick="changeImage()">Psych 1</option>
+			<option value="psychChaos1" onclick="changeImage()">Psych 2</option>
+			<option value="psychFlow" onclick="changeImage()">Psych 3</option>
+			<option value="psychSoap" onclick="changeImage()">Psych 4</option>
+			<option value="psychTessel" onclick="changeImage()">Psych 5</option>
+			<option value="tesselArrow" onclick="changeImage()">Tesselation 1</option>
+			<option value="tesselBirds" onclick="changeImage()">Tesselation 2</option>
+			<option value="tesselHex" onclick="changeImage()">Tesselation 3</option>
+			<option value="tesselPsych" onclick="changeImage()">Tesselation 4</option>
+		</select>
+		<br>
+		<button onclick="speeddelta(true)">speed+</button>
+		<button onclick="speeddelta(false)">speed-</button>
+		<button onclick="toggleInvert()">invert</button>
+		<br>
+		<p id="dThresh">Threshold: 70</p>
+		</div>
+</body>	
