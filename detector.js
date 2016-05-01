@@ -57,7 +57,7 @@ function threshDelta(incr){
 
 
 function changeImage(){
-	var name = document.getElementById("imgname").value;
+	name = document.getElementById("imgname").value;
 	tempimg.src = "imgs/"+name+".jpg";
 	tempimg.width = width;
 	tempimg.height = height;
@@ -80,6 +80,7 @@ function toggleInvert(){
 	invert = !invert;
 }
 
+var name = "space";
 var tempimg = new Image();
 var counter = 0;
 var defaultThresh = 70;
@@ -104,6 +105,8 @@ class detector{
 	}
 		
 	doStuff(){
+		if(document.getElementById("imgname").value!=name)
+			changeImage();
 		this.frame = this.readFrame();
 		if(this.frame){
 			this.bgr2gray();
